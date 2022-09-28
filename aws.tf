@@ -47,9 +47,10 @@ module "security_group_1" {
 module "aws_spoke_bastion" {
   source                      = "terraform-aws-modules/ec2-instance/aws"
   version                     = "2.21.0"
-  instance_type               = var.aws_test_instance_size
+  instance_type               = var.aws_test_instance_size_bastion
   name                        = "${var.aws_spoke1_name}-bastion"
   ami                         = data.aws_ami.ubuntu.id
+
   key_name                    = var.ace_ec2_key_name
   instance_count              = 1
   subnet_id                   = module.aws_spoke_1.vpc.public_subnets[0].subnet_id

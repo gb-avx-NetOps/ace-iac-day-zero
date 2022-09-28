@@ -51,6 +51,10 @@ variable "aws_test_instance_size" {
   default = "t2.micro"
 }
 
+variable "aws_test_instance_size_bastion" {
+  default = "t3.micro"
+}
+
 variable "azure_account_name" {
   default = "azure-account"
 }
